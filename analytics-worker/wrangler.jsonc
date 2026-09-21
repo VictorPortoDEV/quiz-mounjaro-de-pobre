@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mounjaro-analytics",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "ANALYTICS_DB",
+      "database_name": "mounjaro-analytics",
+      "database_id": "<DATABASE_ID>"
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGINS": "https://quiz.mounjarodepobreon.com,https://aceleradormetabolico.mounjarodpobre.com.br,https://desparasitese.mounjarodpobre.com.br",
+    "ALLOW_LOCAL_DEV": "false"
+  }
+}

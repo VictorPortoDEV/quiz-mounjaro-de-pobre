@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Upsell Desparasitação</title>
+  <meta name="description" content="Assista ao vídeo para continuar.">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1093302766782508');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {content_name: 'VSL Desparasite-se'});
+  </script>
+  <!-- End Meta Pixel Code -->
+  <script src="analytics.js" data-page="vsl" data-endpoint="https://analytics.mounjarodpobre.com.br"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Cpath d='M32 9 57 53H7L32 9Z' fill='%23ffd200'/%3E%3Crect x='29' y='23' width='6' height='17' rx='3' fill='%23000'/%3E%3Ccircle cx='32' cy='46' r='3' fill='%23000'/%3E%3C/svg%3E">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#000;color:#fff}
+    body{font-family:Montserrat,Arial,sans-serif}
+    main{width:min(100%,980px);margin:0 auto;padding:110px 20px 130px;text-align:center}
+    .notice{display:inline-flex;align-items:center;gap:10px;border:1px solid #ffd200;color:#ffd200;padding:14px 30px;font-size:33px;font-weight:500;line-height:1}
+    .notice svg{width:30px;height:28px;flex:none;fill:currentColor}
+    h1{max-width:780px;margin:20px auto 20px;font-size:55px;line-height:1;font-weight:700;text-transform:uppercase}
+    h1 span{color:#ff0}
+    .downsell-only{display:none}
+    .is-downsell .normal-only{display:none}
+    .is-downsell .downsell-only{display:block}
+    .downsell-copy{max-width:780px;margin:28px auto 0;font-size:clamp(21px,4vw,34px);font-weight:700;line-height:1.12;text-transform:uppercase}
+    .downsell-copy p{margin:0 0 22px}
+    .downsell-copy .highlight{color:#ff0}
+    .downsell-price{max-width:520px;margin:30px auto 0;text-transform:uppercase;font-weight:700}
+    .downsell-price .product{font-size:clamp(22px,4vw,32px);line-height:1.12}
+    .downsell-price .from{margin-top:18px;font-size:20px;color:#cfcfcf}
+    .downsell-price .value{margin-top:4px;color:#ff0;font-size:clamp(38px,8vw,64px);line-height:1}
+    .countdown{max-width:520px;margin:28px auto 0;border:1px solid #ffd200;color:#ffd200;padding:14px 16px;font-size:clamp(19px,4vw,28px);font-weight:700;text-transform:uppercase}
+    .countdown span{display:block;margin-top:6px;color:#fff;font-size:clamp(36px,8vw,58px);line-height:1;letter-spacing:2px}
+    .player{position:relative;width:min(400px,100%);margin:0 auto;overflow:hidden;border-radius:20px;background:#171717;aspect-ratio:9/16;box-shadow:0 0 0 1px rgba(255,255,255,.05);user-select:none}
+    video{display:block;width:100%;height:100%;object-fit:cover;background:#171717}
+    .play-toggle{position:absolute;inset:0;border:0;background:transparent;cursor:pointer;touch-action:manipulation}
+    .play-toggle:focus-visible{outline:3px solid #ffd200;outline-offset:-6px}
+    .play-icon{position:absolute;top:50%;left:50%;width:68px;height:68px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.72);display:grid;place-items:center;opacity:1;transition:opacity .18s ease}
+    .play-icon::before{content:"";margin-left:5px;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent}
+    .player.is-playing .play-icon{opacity:0}
+    .player.is-paused .play-icon{opacity:1}
+    .progress{position:absolute;z-index:2;right:0;bottom:0;left:0;height:6px;background:rgba(255,255,255,.28);pointer-events:none}
+    .progress__fill{width:0;height:100%;background:#e50914;transition:width .12s linear}
+    /* CTA permanece no fluxo normal, sempre abaixo do player. */
+    .offer{position:static;clear:both;display:block;max-width:520px;margin:28px auto 0;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .35s ease,transform .35s ease}
+    .offer.is-visible{opacity:1;transform:none;pointer-events:auto}
+    .offer__cta{display:block;width:100%;border:0;border-radius:8px;background:#20a647;color:#fff;padding:20px 18px;font:700 clamp(18px,4.6vw,23px)/1.15 Montserrat,Arial,sans-serif;text-decoration:none;text-transform:uppercase;box-shadow:0 5px 0 #11742c;animation:pulse 1.5s ease-in-out infinite}
+    .offer__cta:hover{background:#28b850}
+    .offer__decline{display:inline-block;margin-top:20px;color:#c7c7c7;font-size:13px;text-decoration:underline}
+    @keyframes pulse{50%{transform:scale(1.025);box-shadow:0 6px 18px rgba(32,166,71,.55)}}
+    @media(max-width:700px){
+      main{padding:54px 16px 70px}
+      .notice{gap:8px;padding:12px 15px;font-size:clamp(18px,5vw,25px)}
+      .notice svg{width:24px;height:22px}
+      h1{margin:18px auto 20px;font-size:clamp(32px,10vw,48px);line-height:1.02}
+      .downsell-copy{margin-top:24px;font-size:clamp(20px,6vw,31px)}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="notice">
+      <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M569.5 440C588 472 564.8 512 527.9 512H48.1C11.1 512-12 472 6.5 440l240-416c18.4-32 64.7-32 83.1 0l239.9 416zM288 354c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3 7.4 136c.4 6.3 5.6 11.3 12 11.3h48.6c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"/></svg>
+      <span>VOCÊ DEU O PRIMEIRO PASSO</span>
+    </div>
+    <div class="normal-only">
+      <h1>ASSISTA O VÍDEO ABAIXO<br>OU VOCÊ NÃO <span>TERÁ<br>RESULTADOS...</span></h1>
+    </div>
+    <div class="player normal-only is-paused" id="player">
+      <video id="vsl-video" playsinline preload="metadata" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture tabindex="-1">
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      <button class="play-toggle" id="play-toggle" type="button" aria-label="Reproduzir vídeo"><span class="play-icon" aria-hidden="true"></span></button>
+      <div class="progress" aria-hidden="true"><div class="progress__fill" id="progress-fill"></div></div>
+    </div>
+    <div class="downsell-only">
+      <div class="downsell-copy">
+        <p>MAS AINDA NÃO CONCLUIU...</p>
+        <p>QUEREMOS TE AJUDAR NA SUA JORNADA DO CORPO PERFEITO</p>
+        <p class="highlight">TEMOS SOMENTE AGORA UMA CONDIÇÃO ESPECIAL PARA VOCÊ COMPLETAR OS SEUS RESULTADOS</p>
+      </div>
+      <div class="downsell-price">
+        <div class="product">PROTOCOLO DESPARASITE-SE DE <span>R$ 57,00</span></div>
+        <div class="from">POR</div>
+        <div class="value">R$ 39,90</div>
+      </div>
+      <div class="countdown">ESSA OFERTA É VÁLIDA SOMENTE PARA AGORA E SAIR DESSA PÁGINA IRÁ CANCELAR SUA OFERTA<span id="countdown">02:00</span></div>
+    </div>
+    <section class="offer" id="offer" aria-hidden="true">
+      <a class="offer__cta" href="https://payment.ticto.app/O2FECA3C3" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Desparasite-se'});">SIM, EU ACEITO ESSA OFERTA</a>
+      <a class="offer__decline" id="decline" href="https://desparasitese.mounjarodpobre.com.br/?downsell=1">Não quero esta oferta</a>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const video = document.querySelector('#vsl-video');
+      const player = document.querySelector('#player');
+      const toggle = document.querySelector('#play-toggle');
+      const fill = document.querySelector('#progress-fill');
+      const offer = document.querySelector('#offer');
+      const cta = offer.querySelector('.offer__cta');
+      const decline = document.querySelector('#decline');
+      const isDownsell = new URLSearchParams(location.search).get('downsell') === '1';
+      const analytics = window.FunnelAnalytics;
+      const milestones = new Set();
+      let maxProgress = 0;
+      let started = false;
+      cta.addEventListener('click', () => analytics?.event('vsl_cta_clicked', { offer: isDownsell ? 'downsell' : 'primary' }));
+      document.body.classList.toggle('is-downsell', isDownsell);
+      if (isDownsell) {
+        cta.href = 'https://payment.ticto.app/OF233B1DF';
+        cta.textContent = 'SIM, QUERO APROVEITAR POR R$ 39,90';
+        decline.href = 'https://obrigado.mounjarodpobre.com.br/';
+        offer.classList.add('is-visible');
+        offer.setAttribute('aria-hidden', 'false');
+        let remaining = 120;
+        const countdown = document.querySelector('#countdown');
+        const tick = () => {
+          const minutes = String(Math.floor(remaining / 60)).padStart(2, '0');
+          const seconds = String(remaining % 60).padStart(2, '0');
+          countdown.textContent = `${minutes}:${seconds}`;
+          if (remaining === 0) {
+            cta.removeAttribute('href');
+            cta.textContent = 'OFERTA ENCERRADA';
+            cta.style.pointerEvents = 'none';
+            return;
+          }
+          remaining -= 1;
+          setTimeout(tick, 1000);
+        };
+        tick();
+      } else {
+        history.pushState({ vsl: true }, '', location.href);
+        addEventListener('popstate', () => location.replace(`${location.pathname}?downsell=1`));
+      }
+      const unlockWithSecondsRemaining = 10;
+      const sync = () => {
+        const duration = video.duration;
+        if (!Number.isFinite(duration) || duration <= 0) return;
+        const progress = Math.min(100, Math.round((video.currentTime / duration) * 100));
+        maxProgress = Math.max(maxProgress, progress);
+        analytics?.setState({ vsl_progress: maxProgress });
+        fill.style.width = `${progress}%`;
+        for (const mark of [25, 50, 75, 90, 100]) {
+          if (maxProgress >= mark && !milestones.has(mark)) {
+            milestones.add(mark);
+            analytics?.event(`vsl_${mark}`, { progress: mark });
+          }
+        }
+        if (duration - video.currentTime <= unlockWithSecondsRemaining) {
+          offer.classList.add('is-visible');
+          offer.setAttribute('aria-hidden', 'false');
+        }
+      };
+      if (!isDownsell) {
+        const updatePlayerState = () => {
+          player.classList.toggle('is-playing', !video.paused);
+          player.classList.toggle('is-paused', video.paused);
+          toggle.setAttribute('aria-label', video.paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+        };
+        toggle.addEventListener('click', () => {
+          if (video.paused) {
+            video.muted = false;
+            video.volume = 1;
+            video.play().catch(() => {});
+          } else video.pause();
+        });
+        video.addEventListener('play', () => { updatePlayerState(); if (!started) { started = true; analytics?.event('vsl_started'); } });
+        video.addEventListener('pause', updatePlayerState);
+        video.addEventListener('timeupdate', sync);
+        video.addEventListener('loadedmetadata', sync);
+        video.addEventListener('ended', sync);
+        video.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+          if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) event.preventDefault();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
