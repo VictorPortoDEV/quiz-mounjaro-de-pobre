@@ -1,0 +1,941 @@
+{
+  "assets": [
+    {
+      "contentType": "",
+      "id": "c066eb364128d8ac",
+      "kind": "stylesheet",
+      "name": "acd59919824d3a2a.css",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/c066eb364128d8ac.css",
+      "url": "https://inlead.digital/_next/static/css/acd59919824d3a2a.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e7f65cd14c82b490",
+      "kind": "image",
+      "name": "md-2hwdx-mounjaro-de-pobre.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/e7f65cd14c82b490.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-29/md-2hwdx-mounjaro-de-pobre.png"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "5f4b9ff8a19bf82c",
+      "kind": "image",
+      "name": "lg-2SehF-4.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/5f4b9ff8a19bf82c.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-09-03/lg-2SehF-4.webp"
+    },
+    {
+      "contentType": "text/css",
+      "id": "60499deb3a9ce380",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/60499deb3a9ce380",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "53942f7eac5bfc7c",
+      "kind": "image",
+      "name": "md-YIn74-1.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/53942f7eac5bfc7c.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-YIn74-1.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "0ec8d16a1ddd7fcd",
+      "kind": "image",
+      "name": "lg-7slsw-2.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/0ec8d16a1ddd7fcd.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/lg-7slsw-2.webp"
+    },
+    {
+      "contentType": "image/png",
+      "id": "3b2602917fab1d4f",
+      "kind": "image",
+      "name": "md-2k8qz-cbd82899e2baa59ad7da-1.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/3b2602917fab1d4f.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-05/md-2k8qz-cbd82899e2baa59ad7da-1.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "1c0a51a8fa1ed264",
+      "kind": "image",
+      "name": "md-6v0w9-cea5af30ae6e1ea9aa00-1.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/1c0a51a8fa1ed264.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-05/md-6v0w9-cea5af30ae6e1ea9aa00-1.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "5069e135974dace3",
+      "kind": "image",
+      "name": "md-tyi56-c08d4d459472d8c43c73.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/5069e135974dace3.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-05/md-tyi56-c08d4d459472d8c43c73.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "291597e61e7ca924",
+      "kind": "image",
+      "name": "md-439ip-c340b6e397ea8992b8f6.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/291597e61e7ca924.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-05/md-439ip-c340b6e397ea8992b8f6.png"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "03303607bc4a78b7",
+      "kind": "image",
+      "name": "md-TYvQN-sm-ez9f2-asdas.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/03303607bc4a78b7.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-TYvQN-sm-ez9f2-asdas.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "a5261b37dcd30784",
+      "kind": "image",
+      "name": "md-SsRs2-sm-3ei7p-image-fx.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/a5261b37dcd30784.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-SsRs2-sm-3ei7p-image-fx.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "92af94366895dad9",
+      "kind": "image",
+      "name": "md-D8X8A-sm-cgtdy-image-fx-1.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/92af94366895dad9.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-D8X8A-sm-cgtdy-image-fx-1.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "3954572024a746a0",
+      "kind": "image",
+      "name": "md-IuGbv-sm-q5jub-asfqwfwq.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/3954572024a746a0.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-IuGbv-sm-q5jub-asfqwfwq.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "89f415cf6f5469ed",
+      "kind": "image",
+      "name": "md-mTAhc-sm-x7me5-asdwqa.webp",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/89f415cf6f5469ed.webp",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-11/md-mTAhc-sm-x7me5-asdwqa.webp"
+    },
+    {
+      "contentType": "image/png",
+      "id": "b2611327597dbb1c",
+      "kind": "image",
+      "name": "lg-q4iaN-como-o-mounjaro-de-pobre-funciona.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/b2611327597dbb1c.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-03/lg-q4iaN-como-o-mounjaro-de-pobre-funciona.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "58aacec4b5d682fe",
+      "kind": "image",
+      "name": "lg-hIIlP-2fc795a0e4da18f9f4db2b24a666b245.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/58aacec4b5d682fe.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-14/lg-hIIlP-2fc795a0e4da18f9f4db2b24a666b245.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "5586c9ea30ada862",
+      "kind": "image",
+      "name": "bg-whatsapp.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/5586c9ea30ada862.png",
+      "url": "https://public.inlead.cloud/images/components/bg-whatsapp.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "d280a659f66db120",
+      "kind": "image",
+      "name": "xs-uI6du-captura-de-tela-2026-05-15-110715.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/d280a659f66db120.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-05-15/xs-uI6du-captura-de-tela-2026-05-15-110715.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f1ee70a6a1b05fec",
+      "kind": "image",
+      "name": "6vWvE-cf033b44-c79c-4a59-8763-7aae39e9ab6a.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/f1ee70a6a1b05fec.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-07-06/6vWvE-cf033b44-c79c-4a59-8763-7aae39e9ab6a.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "bf883e0f63987e8a",
+      "kind": "image",
+      "name": "md-6tin0-unnamed.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/bf883e0f63987e8a.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-29/md-6tin0-unnamed.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9b2913ee41cdf4a4",
+      "kind": "image",
+      "name": "lg-rxp85-96084343-1817315278411133-5702942186484531200-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/9b2913ee41cdf4a4.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-29/lg-rxp85-96084343-1817315278411133-5702942186484531200-n.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "8741fe555eeb68ca",
+      "kind": "image",
+      "name": "xs-hg7uo-487484531-122124837026784994-153744016718310861-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/8741fe555eeb68ca.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-26/xs-hg7uo-487484531-122124837026784994-153744016718310861-n.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "b308c217b449ad49",
+      "kind": "image",
+      "name": "lg-jtn7u-lg-m7rkf-2.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/b308c217b449ad49.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-06-02/lg-jtn7u-lg-m7rkf-2.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f54bc3dcc269d757",
+      "kind": "image",
+      "name": "lg-3u0gh-4.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/f54bc3dcc269d757.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-29/lg-3u0gh-4.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "0589495a59569c8f",
+      "kind": "image",
+      "name": "lg-ypq02-2.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/0589495a59569c8f.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-29/lg-ypq02-2.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9fb5bdb5e79e03f9",
+      "kind": "image",
+      "name": "md-qVj5x-asf.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/9fb5bdb5e79e03f9.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/md-qVj5x-asf.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "be19c1404c4dc621",
+      "kind": "image",
+      "name": "md-0rZdE-safas.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/be19c1404c4dc621.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/md-0rZdE-safas.jpg"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "77ee53e67727d0f4",
+      "kind": "image",
+      "name": "K5Joz-apos-o-protocolo-2.gif",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/77ee53e67727d0f4.gif",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-13/K5Joz-apos-o-protocolo-2.gif"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "8cdf05acf0f2b961",
+      "kind": "image",
+      "name": "WmKuD-apos-o-protocolo-1.gif",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/8cdf05acf0f2b961.gif",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-13/WmKuD-apos-o-protocolo-1.gif"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "4fb7da2ef7ec2ca2",
+      "kind": "image",
+      "name": "o7NeE-apos-o-protocolo.gif",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/4fb7da2ef7ec2ca2.gif",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-13/o7NeE-apos-o-protocolo.gif"
+    },
+    {
+      "contentType": "image/png",
+      "id": "bdf3a896867d601e",
+      "kind": "image",
+      "name": "md-y3BCj-sem-titulo-3.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/bdf3a896867d601e.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-15/md-y3BCj-sem-titulo-3.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "de55da481dab83ef",
+      "kind": "image",
+      "name": "md-SJTNd-md-y7m5n-image-removebg-preview-9.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/de55da481dab83ef.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-13/md-SJTNd-md-y7m5n-image-removebg-preview-9.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e3dc10552371fce3",
+      "kind": "image",
+      "name": "md-NfVML-selo-garantia-768x205-480x480.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/e3dc10552371fce3.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-09-23/md-NfVML-selo-garantia-768x205-480x480.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "1a991c8169e0e522",
+      "kind": "image",
+      "name": "lg-SSnSL-dra-fabiana-santos.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/1a991c8169e0e522.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-07-06/lg-SSnSL-dra-fabiana-santos.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "42f77653b71d56a3",
+      "kind": "image",
+      "name": "md-7lWvm-sm-rn3v2-selo-de-garantia-de-30-dias-png-transparente-sem-fundo.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/42f77653b71d56a3.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-08-13/md-7lWvm-sm-rn3v2-selo-de-garantia-de-30-dias-png-transparente-sem-fundo.png"
+    },
+    {
+      "contentType": "text/css",
+      "id": "4566a05a43745d1c",
+      "kind": "stylesheet",
+      "name": "d0320de32467736e.css",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/4566a05a43745d1c.css",
+      "url": "https://inlead.digital/_next/static/css/d0320de32467736e.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "1c9f1a14fa42b0c2",
+      "kind": "image",
+      "name": "xs-6htgz-captura-de-tela-2025-05-05-234746.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/1c9f1a14fa42b0c2.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-06/xs-6htgz-captura-de-tela-2025-05-05-234746.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "70ed9b759e386c24",
+      "kind": "image",
+      "name": "xs-gzdb5-man-reached-goal.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/70ed9b759e386c24.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-05/xs-gzdb5-man-reached-goal.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "6c561c994271114a",
+      "kind": "image",
+      "name": "xs-21yb8-499707532-690580170385426-2846021272690627764-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/6c561c994271114a.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-26/xs-21yb8-499707532-690580170385426-2846021272690627764-n.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a5fae0c8e0edee1b",
+      "kind": "image",
+      "name": "xs-ar9gk-captura-de-tela-2025-05-05-234739.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/a5fae0c8e0edee1b.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-06/xs-ar9gk-captura-de-tela-2025-05-05-234739.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "ffac49f9d61c7fcf",
+      "kind": "image",
+      "name": "xs-r2y3n-captura-de-tela-2025-05-05-234743.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/ffac49f9d61c7fcf.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-06/xs-r2y3n-captura-de-tela-2025-05-05-234743.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "0e25dea2dbab207d",
+      "kind": "image",
+      "name": "xs-rx2uc-453157592-3451781488447775-6605026255174735724-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/0e25dea2dbab207d.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-26/xs-rx2uc-453157592-3451781488447775-6605026255174735724-n.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2a812544243f4098",
+      "kind": "image",
+      "name": "xs-2hpfw-483914306-674686381905246-2583032974264245499-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/2a812544243f4098.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-26/xs-2hpfw-483914306-674686381905246-2583032974264245499-n.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "94f5cdbab3c952f9",
+      "kind": "image",
+      "name": "xs-mxj14-498231559-122128837256785920-1434122653962451032-n.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/94f5cdbab3c952f9.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-26/xs-mxj14-498231559-122128837256785920-1434122653962451032-n.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "099503d1d2cfa18c",
+      "kind": "image",
+      "name": "md-jyuet-woman-drinks-green-loose-leaf-260nw-2452729767.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/099503d1d2cfa18c.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-30/md-jyuet-woman-drinks-green-loose-leaf-260nw-2452729767.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "018487d3b7e882dd",
+      "kind": "image",
+      "name": "md-b2qlc-2.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/018487d3b7e882dd.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-30/md-b2qlc-2.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "3cf86b917cb93747",
+      "kind": "image",
+      "name": "md-ard87-3.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/3cf86b917cb93747.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-30/md-ard87-3.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "b6262b629bf2bd93",
+      "kind": "image",
+      "name": "md-39ehi-4.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/b6262b629bf2bd93.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-30/md-39ehi-4.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "cd00094ce9ac2167",
+      "kind": "image",
+      "name": "md-y46nx-sadafs.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/cd00094ce9ac2167.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-06-04/md-y46nx-sadafs.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "331c8b8ee182d29b",
+      "kind": "image",
+      "name": "md-isr48-woman-drinks-green-loose-leaf-260nw-2452729767-copiar.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/331c8b8ee182d29b.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-30/md-isr48-woman-drinks-green-loose-leaf-260nw-2452729767-copiar.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "e693e8b3642ba2d1",
+      "kind": "image",
+      "name": "lg-b8t9u-3.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/e693e8b3642ba2d1.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-b8t9u-3.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9dc1d2c19b1e4694",
+      "kind": "image",
+      "name": "lg-LuRTa-1.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/9dc1d2c19b1e4694.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-LuRTa-1.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "df5c57ffa786a9f5",
+      "kind": "image",
+      "name": "lg-3n6kZ-10.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/df5c57ffa786a9f5.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-3n6kZ-10.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9fe5f1629b034ca1",
+      "kind": "image",
+      "name": "lg-DHZLB-7.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/9fe5f1629b034ca1.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-DHZLB-7.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "26bb3445e377d4e6",
+      "kind": "image",
+      "name": "lg-3HnAI-6.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/26bb3445e377d4e6.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-3HnAI-6.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2e1e293528c0dfed",
+      "kind": "image",
+      "name": "lg-qzBp6-5.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/2e1e293528c0dfed.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-qzBp6-5.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "94eb4fd9ed831dd6",
+      "kind": "image",
+      "name": "lg-PX4uN-4.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/94eb4fd9ed831dd6.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-PX4uN-4.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "e5e815be43d45b57",
+      "kind": "image",
+      "name": "lg-9AD06-8.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/e5e815be43d45b57.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-9AD06-8.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "db882a0cc207f8a6",
+      "kind": "image",
+      "name": "lg-jqyeu-1asf.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/db882a0cc207f8a6.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-06-12/lg-jqyeu-1asf.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "067aab247c3ac628",
+      "kind": "image",
+      "name": "lg-rpvog-eb50fbb1e42c58f992643d95eb6b5265.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/067aab247c3ac628.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-31/lg-rpvog-eb50fbb1e42c58f992643d95eb6b5265.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "db7b5d49ee7ab23e",
+      "kind": "image",
+      "name": "lg-IxATx-sem-titulo-1.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/db7b5d49ee7ab23e.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-10-03/lg-IxATx-sem-titulo-1.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "c0326a073028328f",
+      "kind": "image",
+      "name": "lg-tUjrL-transformation-carla-f1ocfzig.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/c0326a073028328f.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-05-12/lg-tUjrL-transformation-carla-f1ocfzig.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2dba9d79b4ebeb91",
+      "kind": "image",
+      "name": "lg-NA9aL-9.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/2dba9d79b4ebeb91.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-NA9aL-9.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "ebaf4248d9b4c6fc",
+      "kind": "image",
+      "name": "lg-s8hDL-1.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/ebaf4248d9b4c6fc.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-s8hDL-1.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "430f082ca6d87dd0",
+      "kind": "image",
+      "name": "lg-IWKD4-lg-kwn0r-lg-zbwpj-f34071c8-68f8-4a67-a669-e4ef0fc9bedc.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/430f082ca6d87dd0.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-IWKD4-lg-kwn0r-lg-zbwpj-f34071c8-68f8-4a67-a669-e4ef0fc9bedc.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "f51d7cf82537e488",
+      "kind": "image",
+      "name": "lg-XL556-2.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/f51d7cf82537e488.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-XL556-2.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "b6a37626e4cbbd5d",
+      "kind": "image",
+      "name": "lg-9q4nc-3.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/b6a37626e4cbbd5d.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-9q4nc-3.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9911da11f296dca2",
+      "kind": "image",
+      "name": "lg-2v0rk-a0646663bb8e429ea2e2ce9b35293a6f.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/9911da11f296dca2.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-06-12/lg-2v0rk-a0646663bb8e429ea2e2ce9b35293a6f.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "945f3911176b9eaa",
+      "kind": "image",
+      "name": "lg-68NeM-4.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/945f3911176b9eaa.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-07-30/lg-68NeM-4.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1e3b78263ea60d9f",
+      "kind": "image",
+      "name": "lg-zk9va-3f886fd19b414edfb359b5a8cd02719c2fe36b52.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/1e3b78263ea60d9f.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-15/lg-zk9va-3f886fd19b414edfb359b5a8cd02719c2fe36b52.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "519a7a43104d210a",
+      "kind": "image",
+      "name": "lg-qfomt-lg-avypk-0e9bfd2547e712bf14c384a9a15db679.jpg",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/519a7a43104d210a.jpg",
+      "url": "https://media.inlead.cloud/uploads/26522/2025-05-14/lg-qfomt-lg-avypk-0e9bfd2547e712bf14c384a9a15db679.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f68ab6f88a58679d",
+      "kind": "image",
+      "name": "lg-y27LQ-joana-serafim.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/f68ab6f88a58679d.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-05-12/lg-y27LQ-joana-serafim.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "18f079f001d4c806",
+      "kind": "image",
+      "name": "lg-wNlOG-lg-jx08z-design-sem-nome-53.png",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/18f079f001d4c806.png",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-05-12/lg-wNlOG-lg-jx08z-design-sem-nome-53.png"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "eefbc9fc31e2aec9",
+      "kind": "image",
+      "name": "svg-1",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/eefbc9fc31e2aec9.svg",
+      "url": "inline-svg:eefbc9fc31e2aec9"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "e5329444053b8cb0",
+      "kind": "image",
+      "name": "tail-in",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/e5329444053b8cb0.svg",
+      "url": "inline-svg:e5329444053b8cb0"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "f5e8f513d23369e6",
+      "kind": "image",
+      "name": "svg-3",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/f5e8f513d23369e6.svg",
+      "url": "inline-svg:f5e8f513d23369e6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "99fd809198388391",
+      "kind": "image",
+      "name": "ptt-status",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/99fd809198388391.svg",
+      "url": "inline-svg:99fd809198388391"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "8dab4abd46f93707",
+      "kind": "image",
+      "name": "svg-5",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/8dab4abd46f93707.svg",
+      "url": "inline-svg:8dab4abd46f93707"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "44e6b65f3af003d8",
+      "kind": "image",
+      "name": "svg-6",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/44e6b65f3af003d8.svg",
+      "url": "inline-svg:44e6b65f3af003d8"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "89942a1e4dc47c37",
+      "kind": "image",
+      "name": "svg-7",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/89942a1e4dc47c37.svg",
+      "url": "inline-svg:89942a1e4dc47c37"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7b35499f059a2aac",
+      "kind": "image",
+      "name": "svg-8",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/7b35499f059a2aac.svg",
+      "url": "inline-svg:7b35499f059a2aac"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "bcc380cecf5d6156",
+      "kind": "image",
+      "name": "svg-9",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/bcc380cecf5d6156.svg",
+      "url": "inline-svg:bcc380cecf5d6156"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7b20a9d93feb9530",
+      "kind": "image",
+      "name": "svg-10",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/7b20a9d93feb9530.svg",
+      "url": "inline-svg:7b20a9d93feb9530"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "092988c26ba5151d",
+      "kind": "image",
+      "name": "svg-11",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/092988c26ba5151d.svg",
+      "url": "inline-svg:092988c26ba5151d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0ae7834c7bc6638d",
+      "kind": "image",
+      "name": "svg-12",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/0ae7834c7bc6638d.svg",
+      "url": "inline-svg:0ae7834c7bc6638d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "79e865d63ac42a66",
+      "kind": "image",
+      "name": "svg-13",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/79e865d63ac42a66.svg",
+      "url": "inline-svg:79e865d63ac42a66"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "70a85b1f928fca62",
+      "kind": "image",
+      "name": "svg-14",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/70a85b1f928fca62.svg",
+      "url": "inline-svg:70a85b1f928fca62"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "2c91de213cc82db6",
+      "kind": "image",
+      "name": "svg-15",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/2c91de213cc82db6.svg",
+      "url": "inline-svg:2c91de213cc82db6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7da112d32669873b",
+      "kind": "image",
+      "name": "svg-16",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/7da112d32669873b.svg",
+      "url": "inline-svg:7da112d32669873b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "b7388cd2d4216129",
+      "kind": "image",
+      "name": "svg-17",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/b7388cd2d4216129.svg",
+      "url": "inline-svg:b7388cd2d4216129"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5dbf1358bfafff91",
+      "kind": "image",
+      "name": "svg-18",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/5dbf1358bfafff91.svg",
+      "url": "inline-svg:5dbf1358bfafff91"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "295f62700a302971",
+      "kind": "image",
+      "name": "svg-19",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/295f62700a302971.svg",
+      "url": "inline-svg:295f62700a302971"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "c1a0657fa272792b",
+      "kind": "image",
+      "name": "svg-20",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/c1a0657fa272792b.svg",
+      "url": "inline-svg:c1a0657fa272792b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "607f843deb73ee7b",
+      "kind": "image",
+      "name": "svg-21",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/607f843deb73ee7b.svg",
+      "url": "inline-svg:607f843deb73ee7b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0969e7923a548df3",
+      "kind": "image",
+      "name": "svg-22",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/0969e7923a548df3.svg",
+      "url": "inline-svg:0969e7923a548df3"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "962da76be6303c19",
+      "kind": "image",
+      "name": "svg-23",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/962da76be6303c19.svg",
+      "url": "inline-svg:962da76be6303c19"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "12fe634ccb0a5f65",
+      "kind": "image",
+      "name": "svg-24",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/12fe634ccb0a5f65.svg",
+      "url": "inline-svg:12fe634ccb0a5f65"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "af44352d3b5b9854",
+      "kind": "image",
+      "name": "tail-in",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/af44352d3b5b9854.svg",
+      "url": "inline-svg:af44352d3b5b9854"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "fb28a83378102f1f",
+      "kind": "image",
+      "name": "svg-26",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/fb28a83378102f1f.svg",
+      "url": "inline-svg:fb28a83378102f1f"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7ccf28ff56833274",
+      "kind": "image",
+      "name": "ptt-status",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/7ccf28ff56833274.svg",
+      "url": "inline-svg:7ccf28ff56833274"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "946fa57c7dd86540",
+      "kind": "image",
+      "name": "svg-28",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/946fa57c7dd86540.svg",
+      "url": "inline-svg:946fa57c7dd86540"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5a4360ee5df44421",
+      "kind": "image",
+      "name": "svg-29",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/5a4360ee5df44421.svg",
+      "url": "inline-svg:5a4360ee5df44421"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "4911fb098b85107b",
+      "kind": "image",
+      "name": "svg-30",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/4911fb098b85107b.svg",
+      "url": "inline-svg:4911fb098b85107b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "8239977b73984635",
+      "kind": "image",
+      "name": "svg-31",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/8239977b73984635.svg",
+      "url": "inline-svg:8239977b73984635"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "6f3160233d5bf53d",
+      "kind": "image",
+      "name": "svg-32",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/6f3160233d5bf53d.svg",
+      "url": "inline-svg:6f3160233d5bf53d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "cb3fc072671a47df",
+      "kind": "image",
+      "name": "svg-33",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/cb3fc072671a47df.svg",
+      "url": "inline-svg:cb3fc072671a47df"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "202dfdadc5cd99ea",
+      "kind": "image",
+      "name": "svg-34",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/202dfdadc5cd99ea.svg",
+      "url": "inline-svg:202dfdadc5cd99ea"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "1724d2a1b663b418",
+      "kind": "image",
+      "name": "svg-35",
+      "path": "C:\\Users\\Victor\\AppData\\Local\\Temp/browser-use/assets/2b155a45-c674-4408-b31f-d18618379373/1724d2a1b663b418.svg",
+      "url": "inline-svg:1724d2a1b663b418"
+    }
+  ],
+  "failures": [
+    {
+      "contentType": null,
+      "id": "4a5d2653dcdb3715",
+      "name": "e4af272ccee01ff0-s.p.woff2",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://inlead.digital/_next/static/media/e4af272ccee01ff0-s.p.woff2"
+    },
+    {
+      "contentType": null,
+      "id": "8922cf8d37efd637",
+      "name": "83d54731525ad5cf.css",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://inlead.digital/_next/static/css/83d54731525ad5cf.css"
+    },
+    {
+      "contentType": null,
+      "id": "cdd9f91f78260d29",
+      "name": "css",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap"
+    },
+    {
+      "contentType": "text/html",
+      "id": "92854ef0b3a331e4",
+      "name": "favicon.ico",
+      "reason": "Asset response type text/html is not valid for image",
+      "url": "https://quiz.mounjarodepobreon.com/favicon.ico"
+    },
+    {
+      "contentType": "text/plain",
+      "id": "048439b1578bd610",
+      "name": "tr",
+      "reason": "Asset response type text/plain is not valid for image",
+      "url": "https://www.facebook.com/tr/?id=229825671336230&ev=PageView&dl=https%3A%2F%2Fquiz.mounjarodepobreon.com&rl=https%3A%2F%2Fwww.facebook.com&if=false&ts=1789844438478&iw=false&cd[content_type]=product&sw=1920&sh=1080&v=2.9.403&r=stable&ec=0&o=4124&fbc=fb.1.1789844364063.IwY2xjawUbuthwZG9mAWV4dG4DYWVtAjEwAGJyaWQRMTR2OVU3MU8xTHZobmpRTWJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeWT_gNwVJVmvWPMVr3bzs4puqeWCFXPrQU7pOuoEduTb7J8JOlDc1dOyQn2c_aem_Eq3KtotVXY2h4OvE727Dhw&fbcs=fb.1.1789844364063.IwY2xjawUbuthwZG9mAWV4dG4DYWVtAjEwAGJyaWQRMTR2OVU3MU8xTHZobmpRTWJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeWT_gNwVJVmvWPMVr3bzs4puqeWCFXPrQU7pOuoEduTb7J8JOlDc1dOyQn2c_aem_Eq3KtotVXY2h4OvE727Dhw&aems=0%3B0&fbp=fb.1.1789844364068.964689008221317387&pm=1&hrl=d5d43d&ler=fb&cdl=API_unavailable&plt=677&ups[pv]=%7B%7D&ups[rpv]=%7B%7D&it=1789844438453&coo=false&eid=6aaedbd54318d073ec535854&cs_cc=1&cas=36867319986247185%2C28642394608729325%2C27375098685506724%2C28009298455341969%2C27954840157472690%2C36875550718726660%2C28493343543589519%2C24369420316087260%2C24722777837376847%2C30691052023872053%2C24094021070265466%2C24148530654744910%2C29683017391344870&pm_metadata=%7B%22cd%22%3Atrue%7D&dlc=1&rlc=1&expv2[0]=pl0&expv2[1]=el2&expv2[2]=bc1&expv2[3]=ra0&expv2[4]=rp0&expv2[5]=im0&expv2[6]=hf0&expv2[7]=sd1&expv2[8]=sp1&expv2[9]=ek1&expv2[10]=pc1&expv2[11]=gs1&expv2[12]=zs1&expv2[13]=cp1&expv2[14]=es1&expv2[15]=ac1&expv2[16]=so1&expv2[17]=wc1&expv2[18]=la1&expv2[19]=sf1&expv2[20]=da1&expv2[21]=io1&expv2[22]=ae1&expv2[23]=sx1&expv2[24]=if1&expv2[25]=fd1&expv2[26]=bg1&expv2[27]=mg1&expv2[28]=kl1&expv2[29]=sg1&expv2[30]=mk1&expv2[31]=sn1&expv2[32]=ec1&expv2[33]=mp1&expv2[34]=ps1&expv2[35]=fx1&expv2[36]=vt1&expv2[37]=dp1&expv2[38]=fw1&expv2[39]=cn1&expv2[40]=tz1&expv2[41]=pe1&expv2[42]=ee1&expv2[43]=bu1&expv2[44]=ta1&expv2[45]=ot0&expv2[46]=ep1&rqm=GET"
+    },
+    {
+      "contentType": "text/plain",
+      "id": "ffce1b58efef4b86",
+      "name": "tr",
+      "reason": "Asset response type text/plain is not valid for image",
+      "url": "https://www.facebook.com/tr/?id=229825671336230&ev=ViewContent&dl=https%3A%2F%2Fquiz.mounjarodepobreon.com&rl=https%3A%2F%2Fwww.facebook.com&if=false&ts=1789844447115&iw=false&cd[content_type]=product&sw=1920&sh=1080&v=2.9.403&r=stable&ec=1&o=4124&fbc=fb.1.1789844364063.IwY2xjawUbuthwZG9mAWV4dG4DYWVtAjEwAGJyaWQRMTR2OVU3MU8xTHZobmpRTWJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeWT_gNwVJVmvWPMVr3bzs4puqeWCFXPrQU7pOuoEduTb7J8JOlDc1dOyQn2c_aem_Eq3KtotVXY2h4OvE727Dhw&fbcs=fb.1.1789844364063.IwY2xjawUbuthwZG9mAWV4dG4DYWVtAjEwAGJyaWQRMTR2OVU3MU8xTHZobmpRTWJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeWT_gNwVJVmvWPMVr3bzs4puqeWCFXPrQU7pOuoEduTb7J8JOlDc1dOyQn2c_aem_Eq3KtotVXY2h4OvE727Dhw&aems=0%3B0&fbp=fb.1.1789844364068.964689008221317387&pm=1&hrl=590e13&ler=fb&cdl=API_unavailable&plt=677&ups[pv]=%7B%7D&ups[rpv]=%7B%7D&it=1789844438453&coo=false&eid=6aaedbded4a6ebd981240a4f&cs_cc=1&cas=27814578901533964%2C27295921153351485%2C27679296385099387%2C38063506889963763%2C27552074747745598%2C28909578258649971%2C27431802619854418%2C27429311976724131%2C36862657163379169%2C28011759615074141%2C26953829280963781%2C26461626820180810%2C24526599707024385%2C24505840735738784%2C25146836501572067%2C24250783701217725%2C24553902714222982%2C24148530654744910%2C24113199084939411%2C9867841983312405&pm_metadata=%7B%22cd%22%3Atrue%7D&dlc=1&rlc=1&expv2[0]=pl0&expv2[1]=el3&expv2[2]=bc1&expv2[3]=ra0&expv2[4]=rp0&expv2[5]=im0&expv2[6]=hf0&expv2[7]=sd1&expv2[8]=sp1&expv2[9]=ek1&expv2[10]=pc1&expv2[11]=gs1&expv2[12]=zs1&expv2[13]=cp1&expv2[14]=es1&expv2[15]=ac1&expv2[16]=so1&expv2[17]=wc1&expv2[18]=la1&expv2[19]=sf1&expv2[20]=da1&expv2[21]=io1&expv2[22]=ae1&expv2[23]=sx1&expv2[24]=if1&expv2[25]=fd1&expv2[26]=bg1&expv2[27]=mg1&expv2[28]=kl1&expv2[29]=sg1&expv2[30]=mk1&expv2[31]=sn1&expv2[32]=ec1&expv2[33]=mp1&expv2[34]=ps1&expv2[35]=fx1&expv2[36]=vt1&expv2[37]=dp1&expv2[38]=fw1&expv2[39]=cn1&expv2[40]=tz1&expv2[41]=pe1&expv2[42]=ee1&expv2[43]=bu1&expv2[44]=ta1&expv2[45]=ot0&expv2[46]=ep1&rqm=GET"
+    },
+    {
+      "contentType": null,
+      "id": "48b9eda33187c904",
+      "name": "pxab6-1-fabiana.mp3",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-07-06/pxab6-1-fabiana.mp3"
+    },
+    {
+      "contentType": null,
+      "id": "b6f35c504145b18b",
+      "name": "UG5Ej-2-fabiana.mp3",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-07-06/UG5Ej-2-fabiana.mp3"
+    },
+    {
+      "contentType": null,
+      "id": "36583d75d47fdc98",
+      "name": "uxC6O-3-fabiana.mp3",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at vJ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://media.inlead.cloud/uploads/26522/2026-07-06/uxC6O-3-fabiana.mp3"
+    }
+  ]
+}
