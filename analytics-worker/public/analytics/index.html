@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Analytics · Mounjaro de Pobre</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login" id="login">
+    <form id="login-form" class="login-card">
+      <span class="eyebrow">ACESSO PRIVADO</span>
+      <h1>Analytics</h1>
+      <p>Informe o token administrativo configurado no Worker.</p>
+      <input id="token" type="password" autocomplete="current-password" placeholder="Token de acesso" required>
+      <button type="submit">Entrar</button>
+      <small id="login-error"></small>
+    </form>
+  </div>
+
+  <main class="shell" id="dashboard" hidden>
+    <header>
+      <div><span class="live"><i></i> AO VIVO</span><h1>Visão geral</h1><p>Quiz e páginas de VSL em tempo quase real</p></div>
+      <button class="ghost" id="logout">Sair</button>
+    </header>
+
+    <section class="filters" aria-label="Filtros">
+      <select id="range"><option value="now">Agora</option><option value="15m" selected>15 min</option><option value="1h">1 hora</option><option value="today">Hoje</option></select>
+      <select id="page"><option value="">Todas as páginas</option><option value="quiz">Quiz</option><option value="vsl">VSL</option></select>
+      <input id="source" placeholder="utm_source">
+      <input id="campaign" placeholder="utm_campaign">
+      <button id="apply">Aplicar</button>
+    </section>
+
+    <section class="cards" aria-label="Resumo">
+      <article><span>ONLINE AGORA</span><strong id="online">—</strong><small>últimos 30 segundos</small></article>
+      <article><span>VISITANTES</span><strong id="visitors">—</strong><small>no período selecionado</small></article>
+      <article><span>NO QUIZ</span><strong id="quiz-online">—</strong><small>online agora</small></article>
+      <article><span>NA VSL</span><strong id="vsl-online">—</strong><small>online agora</small></article>
+      <article><span>CTA</span><strong id="cta">—</strong><small>cliques no período</small></article>
+    </section>
+
+    <section class="panel funnel-panel">
+      <div class="panel-title"><div><span class="eyebrow">FUNIL</span><h2>Progressão</h2></div><span id="updated">Atualizando…</span></div>
+      <div class="funnel" id="funnel"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><div><span class="eyebrow">SESSÕES</span><h2>Visitantes agora</h2></div><span>Clique para ver a timeline</span></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Sessão</th><th>Local atual</th><th>Progresso</th><th>Tempo</th><th>Origem</th><th>Campanha</th><th>Última atividade</th></tr></thead><tbody id="sessions"></tbody></table>
+        <div class="empty" id="empty" hidden>Nenhuma sessão neste período.</div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="detail"><div class="drawer"><button class="close" id="close" aria-label="Fechar">×</button><div id="detail-content"></div></div></dialog>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
