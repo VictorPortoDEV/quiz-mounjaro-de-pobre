@@ -4,7 +4,7 @@ O Quiz e as duas VSLs enviam eventos relevantes e um heartbeat a cada 10 segundo
 
 ## Cloudflare
 
-O projeto está em `analytics-worker/`. Ele usa o binding D1 `ANALYTICS_DB`, o secret `ANALYTICS_ADMIN_TOKEN` e as variáveis `ALLOWED_ORIGINS` e `ALLOW_LOCAL_DEV`.
+O projeto está em `analytics-worker/`. Ele usa o binding D1 `ANALYTICS_DB`, o secret `ANALYTICS_ADMIN_TOKEN` e as variáveis `ALLOWED_ORIGINS` e `ALLOW_LOCAL_DEV`. O ambiente de produção está publicado em `https://analytics.mounjarodpobre.com.br`, com o painel em `/analytics/`.
 
 ```powershell
 cd "C:\Users\Victor\Desktop\o clonador\MOUNJARO DE POBRE\analytics-worker"
@@ -13,7 +13,7 @@ npx wrangler login
 npx wrangler d1 create mounjaro-analytics
 ```
 
-Copie o `database_id` retornado e substitua `<DATABASE_ID>` em `wrangler.jsonc`. Depois:
+Em uma nova conta Cloudflare, copie o `database_id` retornado para `wrangler.jsonc`. No ambiente atual o D1 e o custom domain já estão configurados. Para reaplicar migrations e publicar:
 
 ```powershell
 npx wrangler d1 migrations apply mounjaro-analytics --remote

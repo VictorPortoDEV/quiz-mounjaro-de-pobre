@@ -3,6 +3,12 @@
   "name": "mounjaro-analytics",
   "main": "src/index.js",
   "compatibility_date": "2026-09-01",
+  "routes": [
+    {
+      "pattern": "analytics.mounjarodpobre.com.br",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
@@ -12,7 +18,7 @@
     {
       "binding": "ANALYTICS_DB",
       "database_name": "mounjaro-analytics",
-      "database_id": "<DATABASE_ID>"
+      "database_id": "5aa19448-a21b-4738-a127-b42036dfbb79"
     }
   ],
   "vars": {
