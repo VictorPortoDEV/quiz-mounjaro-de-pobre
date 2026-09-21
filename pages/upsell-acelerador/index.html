@@ -21,7 +21,8 @@
     h1 span{color:#ff0}
     .player{width:min(400px,100%);margin:0 auto;overflow:hidden;background:#171717;aspect-ratio:9/16}
     video{display:block;width:100%;height:100%;object-fit:cover;background:#171717}
-    .decline{display:inline-block;margin-top:22px;color:#777;text-decoration:none;font-size:13px;line-height:1.4}
+    .decline{display:none;margin-top:22px;color:#777;text-decoration:none;font-size:13px;line-height:1.4}
+    .decline.is-visible{display:inline-block}
     .decline:hover,.decline:focus{color:#aaa;text-decoration:underline}
     @media(max-width:700px){
       main{padding:54px 16px 70px}
@@ -41,12 +42,27 @@
     <p class="status">SUA COMPRA ESTÁ SENDO FINALIZADA, FECHAR A PÁGINA PODE GERAR PROBLEMAS NO PEDIDO</p>
     <h1>ENQUANTO ISSO, VEJA COMO<br>EMAGRECER MAIS RÁPIDO COM<br>O <span>TRUQUE DO MOUNJARO 👇🏻</span></h1>
     <div class="player">
-      <video controls playsinline preload="metadata" poster="thumbnail.jpg">
+      <video id="vsl-video" controls playsinline preload="metadata" poster="thumbnail.jpg">
         <source src="video.mp4" type="video/mp4">
         Seu navegador não suporta vídeo HTML5.
       </video>
     </div>
-    <a class="decline" href="https://aceleradormetabolico.mounjarodpobre.com.br/?downsell=1">Não quero esta oferta</a>
+    <a class="decline" id="decline" href="https://aceleradormetabolico.mounjarodpobre.com.br/?downsell=1">Não quero esta oferta</a>
   </main>
+  <script>
+    (() => {
+      const video = document.querySelector('#vsl-video');
+      const decline = document.querySelector('#decline');
+      const showWhenRemaining = 10;
+      const sync = () => {
+        if (Number.isFinite(video.duration) && video.duration - video.currentTime <= showWhenRemaining) {
+          decline.classList.add('is-visible');
+        }
+      };
+      video.addEventListener('loadedmetadata', sync);
+      video.addEventListener('timeupdate', sync);
+      video.addEventListener('ended', sync);
+    })();
+  </script>
 </body>
 </html>
