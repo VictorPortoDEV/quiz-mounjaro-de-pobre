@@ -20,7 +20,9 @@ async function refresh(){try{const params=query();const [overview,sessions]=awai
 const field=(name,value)=>{const div=document.createElement('div');const label=document.createElement('span');label.textContent=name;const strong=document.createElement('strong');strong.textContent=value||'—';div.append(label,strong);return div};
 async function openDetail(id){try{const data=await api(`/session/${encodeURIComponent(id)}`),s=data.session,content=$('#detail-content');content.replaceChildren();const eyebrow=document.createElement('span');eyebrow.className='eyebrow';eyebrow.textContent='DETALHES DA SESSÃO';const title=document.createElement('h2');title.textContent=short(s.session_id);const grid=document.createElement('div');grid.className='detail-grid';grid.append(field('Origem',s.utm_source||'Direto'),field('Campanha',s.utm_campaign),field('Conteúdo',s.utm_content),field('Dispositivo',`${s.device_type||'—'} · ${s.browser||'—'}`),field('Entrada',new Date(s.started_at*1000).toLocaleString('pt-BR')),field('Duração',duration(s.last_seen_at-s.started_at)),field('Página atual',s.current_page),field('Progresso',s.current_page==='quiz'?`Etapa ${s.current_step||1}/${s.quiz_total_steps||'—'}`:`${s.vsl_progress||0}%`));const timelineTitle=document.createElement('h3');timelineTitle.textContent='Timeline';const timeline=document.createElement('ol');timeline.className='timeline';for(const event of data.events){const li=document.createElement('li');const time=document.createElement('time');time.textContent=new Date(event.created_at*1000).toLocaleTimeString('pt-BR');const name=document.createElement('b');name.textContent=event.event_name==='quiz_step'?`Etapa ${event.event_data.step||'—'}`:(labels[event.event_name]||event.event_name);li.append(time,name);timeline.append(li)}content.append(eyebrow,title,grid,timelineTitle,timeline);$('#detail').showModal()}catch{}}
 
-function enter(){sessionStorage.setItem('analytics_admin_token',state.token);$('#login').hidden=true;$('#dashboard').hidden=false;clearInterval(state.timer);refresh();state.timer=setInterval(refresh,5000)}
+const pollDelay=()=>$('#range').value==='now'?2000:5000;
+function scheduleRefresh(){clearInterval(state.timer);state.timer=setInterval(refresh,pollDelay())}
+function enter(){sessionStorage.setItem('analytics_admin_token',state.token);$('#login').hidden=true;$('#dashboard').hidden=false;refresh();scheduleRefresh()}
 function logout(){clearInterval(state.timer);state.token='';sessionStorage.removeItem('analytics_admin_token');$('#dashboard').hidden=true;$('#login').hidden=false}
 let loginInProgress=false;
 async function login(){
@@ -34,5 +36,6 @@ async function login(){
 }
 $('#login-form').addEventListener('submit',event=>{event.preventDefault();void login()});
 $('#login-form button').addEventListener('click',event=>{event.preventDefault();void login()});
+$('#range').addEventListener('change',()=>{scheduleRefresh();void refresh()});
 $('#apply').addEventListener('click',refresh);$('#logout').addEventListener('click',logout);$('#close').addEventListener('click',()=>$('#detail').close());$('#detail').addEventListener('click',event=>{if(event.target===$('#detail'))$('#detail').close()});
 if(state.token)enter();
