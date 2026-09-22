@@ -22,6 +22,17 @@ async function openDetail(id){try{const data=await api(`/session/${encodeURIComp
 
 function enter(){sessionStorage.setItem('analytics_admin_token',state.token);$('#login').hidden=true;$('#dashboard').hidden=false;clearInterval(state.timer);refresh();state.timer=setInterval(refresh,5000)}
 function logout(){clearInterval(state.timer);state.token='';sessionStorage.removeItem('analytics_admin_token');$('#dashboard').hidden=true;$('#login').hidden=false}
-$('#login-form').addEventListener('submit',async event=>{event.preventDefault();state.token=$('#token').value;try{await api('/overview?range=now');$('#login-error').textContent='';enter()}catch{$('#login-error').textContent='Token inválido.'}});
+let loginInProgress=false;
+async function login(){
+  if(loginInProgress)return;
+  const token=$('#token').value.trim(),error=$('#login-error'),button=$('#login-form button');
+  if(!token){error.textContent='Informe o token.';return}
+  loginInProgress=true;state.token=token;button.disabled=true;button.textContent='Entrando…';error.textContent='';
+  try{await api('/overview?range=now');enter()}
+  catch(cause){state.token='';error.textContent=cause.message==='unauthorized'?'Token inválido.':'Não foi possível conectar ao dashboard.'}
+  finally{loginInProgress=false;button.disabled=false;button.textContent='Entrar'}
+}
+$('#login-form').addEventListener('submit',event=>{event.preventDefault();void login()});
+$('#login-form button').addEventListener('click',event=>{event.preventDefault();void login()});
 $('#apply').addEventListener('click',refresh);$('#logout').addEventListener('click',logout);$('#close').addEventListener('click',()=>$('#detail').close());$('#detail').addEventListener('click',event=>{if(event.target===$('#detail'))$('#detail').close()});
 if(state.token)enter();

@@ -78,3 +78,11 @@ test('quiz está instrumentado sem alterar chamadas do Meta',async()=>{
   assert.match(quiz,/trackMeta\('ViewContent'/);
   assert.match(page,/fbq\('track', 'PageView'/);
 });
+
+test('dashboard usa login explícito por clique e submit',async()=>{
+  const html=await readFile(new URL('../public/analytics/index.html',import.meta.url),'utf8');
+  const app=await readFile(new URL('../public/analytics/app.js',import.meta.url),'utf8');
+  assert.match(html,/app\.js\?v=2/);
+  assert.match(app,/login-form button.*addEventListener\('click'/);
+  assert.match(app,/login-form.*addEventListener\('submit'/);
+});
