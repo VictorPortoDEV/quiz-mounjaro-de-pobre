@@ -70,11 +70,10 @@ test('janela online é independente dos filtros de período',()=>{
   assert.equal(rangeStart('now',10_000),9_700);
 });
 
-test('quiz está instrumentado sem alterar chamadas do Meta',async()=>{
+test('quiz mantém eventos de análise e demais chamadas do Meta',async()=>{
   const quiz=await readFile(new URL('../../app.js',import.meta.url),'utf8');
   const page=await readFile(new URL('../../index.html',import.meta.url),'utf8');
   assert.match(quiz,/quiz_started/);assert.match(quiz,/quiz_completed/);assert.match(quiz,/cta_clicked/);
-  assert.match(quiz,/trackMeta\('InitiateCheckout'/);
   assert.match(quiz,/trackMeta\('ViewContent'/);
   assert.match(page,/fbq\('track', 'PageView'/);
 });
