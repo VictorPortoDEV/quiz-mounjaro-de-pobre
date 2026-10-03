@@ -69,6 +69,25 @@ h1 { margin-bottom: 16px; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.0
 .lead { max-width: 590px; margin: 0 auto 30px; color: #c8d9ce; font-size: 1.05rem; line-height: 1.7; }
 .lead strong { color: #fff; }
 
+.portal-button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  border-radius: 14px;
+  padding: 0 28px;
+  color: #06200f;
+  background: #27d978;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(39, 217, 120, .2);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.portal-button:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.portal-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
 .banner-wrap { overflow: hidden; margin: 0 auto 30px; border-radius: 18px; background: #fff; box-shadow: 0 12px 34px rgba(0,0,0,.22); }
 .banner { display: block; width: 100%; height: auto; }
 
@@ -76,6 +95,7 @@ h1 { margin-bottom: 16px; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.0
 .next-steps h2 { margin-bottom: 10px; font-size: 1.1rem; }
 .next-steps p { margin-bottom: 5px; color: #b6cabe; line-height: 1.6; }
 .next-steps p:last-child { margin-bottom: 0; }
+.next-steps a { color: #7af0a8; font-weight: 700; }
 .support { margin: 24px 0 0; color: #7f9b89; font-size: .84rem; line-height: 1.5; }
 
 @media (max-width: 520px) {
