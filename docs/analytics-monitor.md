@@ -1,6 +1,6 @@
 # Monitor de analytics
 
-O Quiz e as duas VSLs enviam eventos relevantes e um heartbeat a cada 10 segundos para um Cloudflare Worker. O Worker grava o estado consolidado em `sessions`, a timeline em `events` e serve o painel privado em `/analytics/`. Não há tracking no checkout nem coleta de nome, e-mail, telefone, pagamento ou IP.
+O Quiz e as duas VSLs enviam eventos relevantes e um heartbeat a cada 10 segundos para um Cloudflare Worker. O Worker grava o estado consolidado em `sessions`, a timeline em `events` e serve o painel privado em `/analytics/`. Não há tracking no checkout nem coleta de nome, e-mail, telefone ou pagamento. O IP mais recente é obtido exclusivamente de `CF-Connecting-IP`, associado à sessão e exibido somente no detalhe autenticado. Após 7 dias desde a última captura, o IP deixa de ser exibido; uma rotina horária apaga os IPs vencidos do banco (a exclusão física pode ocorrer até uma hora depois). Métricas e eventos são preservados. Não há bloqueio automático por IP. A política de privacidade do site deve informar essa coleta e finalidade.
 
 ## Cloudflare
 

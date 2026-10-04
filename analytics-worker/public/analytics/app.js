@@ -1,8 +1,8 @@
 const $=selector=>document.querySelector(selector);
-const state={token:sessionStorage.getItem('analytics_admin_token')||'',timer:null};
+const state={timer:null};
 const labels={page_view:'Entrada na página',quiz_started:'Iniciou o quiz',quiz_step:'Avançou no quiz',quiz_completed:'Concluiu o quiz',cta_clicked:'Clicou no CTA do quiz',vsl_started:'Iniciou a VSL',vsl_25:'VSL 25%',vsl_50:'VSL 50%',vsl_75:'VSL 75%',vsl_90:'VSL 90%',vsl_100:'Concluiu a VSL',vsl_cta_clicked:'Clicou no CTA da VSL'};
 
-const api=async path=>{const response=await fetch(`/api/analytics${path}`,{headers:{Authorization:`Bearer ${state.token}`},cache:'no-store'});if(response.status===401)throw new Error('unauthorized');if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()};
+const api=async path=>{const response=await fetch(`/api/analytics${path}`,{cache:'no-store',credentials:'same-origin'});if(response.status===401)throw new Error('unauthorized');if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()};
 const query=()=>{const params=new URLSearchParams({range:$('#range').value});for(const key of ['page','source','campaign']){const value=$(`#${key}`).value.trim();if(value)params.set(key,value)}return params};
 const duration=value=>{const seconds=Math.max(0,Math.floor(value));return `${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`};
 const ago=(timestamp,now)=>{const seconds=Math.max(0,now-timestamp);if(seconds<3)return'agora';if(seconds<60)return`${seconds}s`;if(seconds<3600)return`${Math.floor(seconds/60)}min`;return`${Math.floor(seconds/3600)}h`};
@@ -18,24 +18,24 @@ function renderSessions(data){const tbody=$('#sessions');tbody.replaceChildren()
 async function refresh(){try{const params=query();const [overview,sessions]=await Promise.all([api(`/overview?${params}`),api(`/sessions?${params}`)]);for(const [id,key] of [['online','online'],['visitors','visitors'],['quiz-online','quiz_online'],['vsl-online','vsl_online'],['cta','cta']])setText(id,overview.summary[key]);renderFunnel(overview.funnel);renderSessions(sessions);setText('updated',`Atualizado ${new Date().toLocaleTimeString('pt-BR')}`)}catch(error){if(error.message==='unauthorized')logout();else setText('updated','Falha ao atualizar')}}
 
 const field=(name,value)=>{const div=document.createElement('div');const label=document.createElement('span');label.textContent=name;const strong=document.createElement('strong');strong.textContent=value||'—';div.append(label,strong);return div};
-async function openDetail(id){try{const data=await api(`/session/${encodeURIComponent(id)}`),s=data.session,content=$('#detail-content');content.replaceChildren();const eyebrow=document.createElement('span');eyebrow.className='eyebrow';eyebrow.textContent='DETALHES DA SESSÃO';const title=document.createElement('h2');title.textContent=short(s.session_id);const grid=document.createElement('div');grid.className='detail-grid';grid.append(field('Origem',s.utm_source||'Direto'),field('Campanha',s.utm_campaign),field('Conteúdo',s.utm_content),field('Dispositivo',`${s.device_type||'—'} · ${s.browser||'—'}`),field('Entrada',new Date(s.started_at*1000).toLocaleString('pt-BR')),field('Duração',duration(s.last_seen_at-s.started_at)),field('Página atual',s.current_page),field('Progresso',s.current_page==='quiz'?`Etapa ${s.current_step||1}/${s.quiz_total_steps||'—'}`:`${s.vsl_progress||0}%`));const timelineTitle=document.createElement('h3');timelineTitle.textContent='Timeline';const timeline=document.createElement('ol');timeline.className='timeline';for(const event of data.events){const li=document.createElement('li');const time=document.createElement('time');time.textContent=new Date(event.created_at*1000).toLocaleTimeString('pt-BR');const name=document.createElement('b');name.textContent=event.event_name==='quiz_step'?`Etapa ${event.event_data.step||'—'}`:(labels[event.event_name]||event.event_name);li.append(time,name);timeline.append(li)}content.append(eyebrow,title,grid,timelineTitle,timeline);$('#detail').showModal()}catch{}}
+async function openDetail(id){try{const data=await api(`/session/${encodeURIComponent(id)}`),s=data.session,content=$('#detail-content');content.replaceChildren();const eyebrow=document.createElement('span');eyebrow.className='eyebrow';eyebrow.textContent='DETALHES DA SESSÃO';const title=document.createElement('h2');title.textContent=short(s.session_id);const grid=document.createElement('div');grid.className='detail-grid';grid.append(field('IP mais recente',s.ip_address),field('IP registrado em',s.ip_recorded_at?new Date(s.ip_recorded_at*1000).toLocaleString('pt-BR'):'—'),field('Origem',s.utm_source||'Direto'),field('Campanha',s.utm_campaign),field('Conteúdo',s.utm_content),field('Dispositivo',`${s.device_type||'—'} · ${s.browser||'—'}`),field('Entrada',new Date(s.started_at*1000).toLocaleString('pt-BR')),field('Duração',duration(s.last_seen_at-s.started_at)),field('Página atual',s.current_page),field('Progresso',s.current_page==='quiz'?`Etapa ${s.current_step||1}/${s.quiz_total_steps||'—'}`:`${s.vsl_progress||0}%`));const timelineTitle=document.createElement('h3');timelineTitle.textContent='Timeline';const timeline=document.createElement('ol');timeline.className='timeline';for(const event of data.events){const li=document.createElement('li');const time=document.createElement('time');time.textContent=new Date(event.created_at*1000).toLocaleTimeString('pt-BR');const name=document.createElement('b');name.textContent=event.event_name==='quiz_step'?`Etapa ${event.event_data.step||'—'}`:(labels[event.event_name]||event.event_name);li.append(time,name);timeline.append(li)}const retention=document.createElement('p');retention.textContent='IP visível por 7 dias desde a última captura. Limpeza automática horária; nenhuma regra de bloqueio automático por IP.';content.append(eyebrow,title,grid,retention,timelineTitle,timeline);$('#detail').showModal()}catch{}}
 
 const pollDelay=()=>$('#range').value==='now'?2000:5000;
 function scheduleRefresh(){clearInterval(state.timer);state.timer=setInterval(refresh,pollDelay())}
-function enter(){sessionStorage.setItem('analytics_admin_token',state.token);$('#login').hidden=true;$('#dashboard').hidden=false;refresh();scheduleRefresh()}
-function logout(){clearInterval(state.timer);state.token='';sessionStorage.removeItem('analytics_admin_token');$('#dashboard').hidden=true;$('#login').hidden=false}
+function enter(){$('#login').hidden=true;$('#dashboard').hidden=false;refresh();scheduleRefresh()}
+function logout(){clearInterval(state.timer);$('#dashboard').hidden=true;$('#login').hidden=false;void fetch('/api/analytics/logout',{method:'POST',credentials:'same-origin'})}
 let loginInProgress=false;
 async function login(){
   if(loginInProgress)return;
-  const token=$('#token').value.trim(),error=$('#login-error'),button=$('#login-form button');
-  if(!token){error.textContent='Informe o token.';return}
-  loginInProgress=true;state.token=token;button.disabled=true;button.textContent='Entrando…';error.textContent='';
-  try{await api('/overview?range=now');enter()}
-  catch(cause){state.token='';error.textContent=cause.message==='unauthorized'?'Token inválido.':'Não foi possível conectar ao dashboard.'}
+  const password=$('#token').value,error=$('#login-error'),button=$('#login-form button');
+  if(!password){error.textContent='Informe a senha.';return}
+  loginInProgress=true;button.disabled=true;button.textContent='Entrando…';error.textContent='';
+  try{const response=await fetch('/api/analytics/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password}),credentials:'same-origin'});if(!response.ok)throw new Error(response.status===401?'unauthorized':'request');$('#token').value='';enter()}
+  catch(cause){error.textContent=cause.message==='unauthorized'?'Senha inválida.':'Não foi possível conectar ao dashboard.'}
   finally{loginInProgress=false;button.disabled=false;button.textContent='Entrar'}
 }
 $('#login-form').addEventListener('submit',event=>{event.preventDefault();void login()});
 $('#login-form button').addEventListener('click',event=>{event.preventDefault();void login()});
 $('#range').addEventListener('change',()=>{scheduleRefresh();void refresh()});
 $('#apply').addEventListener('click',refresh);$('#logout').addEventListener('click',logout);$('#close').addEventListener('click',()=>$('#detail').close());$('#detail').addEventListener('click',event=>{if(event.target===$('#detail'))$('#detail').close()});
-if(state.token)enter();
+void api('/overview?range=now').then(enter).catch(()=>{});

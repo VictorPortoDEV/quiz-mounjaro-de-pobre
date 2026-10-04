@@ -3,6 +3,9 @@
   "name": "mounjaro-analytics",
   "main": "src/index.js",
   "compatibility_date": "2026-09-01",
+  "triggers": {
+    "crons": ["0 * * * *"]
+  },
   "routes": [
     {
       "pattern": "analytics.mounjarodpobre.com.br",

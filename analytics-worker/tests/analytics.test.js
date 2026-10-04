@@ -10,10 +10,15 @@ class Statement {
   async run(){
     if(this.sql.startsWith('INSERT INTO sessions')){
       const v=this.values,previous=this.db.sessions.get(v[0]);
-      this.db.sessions.set(v[0],{session_id:v[0],started_at:previous?.started_at??v[1],last_seen_at:v[2],current_page:v[3],current_step:v[4]??previous?.current_step,quiz_total_steps:v[5]??previous?.quiz_total_steps,vsl_progress:v[6]??previous?.vsl_progress});
+      this.db.sessions.set(v[0],{session_id:v[0],started_at:previous?.started_at??v[1],last_seen_at:v[2],current_page:v[3],current_step:v[4]??previous?.current_step,quiz_total_steps:v[5]??previous?.quiz_total_steps,vsl_progress:v[6]??previous?.vsl_progress,ip_address:v[19]??previous?.ip_address??null,ip_recorded_at:v[20]??previous?.ip_recorded_at??null});
     }else if(this.sql.startsWith('INSERT OR IGNORE INTO events')&&!this.db.events.has(this.values[0]))this.db.events.set(this.values[0],{id:this.values[0],session_id:this.values[1],event_name:this.values[2]});
+    if(this.sql.startsWith('UPDATE sessions SET ip_address=NULL')){
+      for(const session of this.db.sessions.values())if(session.ip_recorded_at<=this.values[0]){session.ip_address=null;session.ip_recorded_at=null}
+    }
     return {success:true};
   }
+  async first(){return this.db.sessions.get(this.values[0])?{...this.db.sessions.get(this.values[0])}:null}
+  async all(){return {results:[...this.db.events.values()].filter(event=>event.session_id===this.values[0]).map(event=>({...event,event_data:'{}'}))}}
 }
 class FakeD1 {
   constructor(){this.sessions=new Map();this.events=new Map()}
@@ -24,6 +29,66 @@ class FakeD1 {
 const env=()=>({ANALYTICS_DB:new FakeD1(),ANALYTICS_ADMIN_TOKEN:'secret-token',ALLOWED_ORIGINS:'https://quiz.example',ALLOW_LOCAL_DEV:'true',ASSETS:{fetch:()=>new Response('asset')}});
 const payload={session_id:'12345678-1234-4234-9234-123456789012',current_page:'quiz',current_step:1,quiz_total_steps:20,page_path:'/quiz'};
 const post=(path,body,origin='https://quiz.example')=>new Request(`https://analytics.example${path}`,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});
+
+test('IP vem somente do Cloudflare, ignorando IP enviado pelo cliente',async()=>{
+  const testEnv=env(),request=post('/api/analytics/heartbeat',{...payload,ip_address:'203.0.113.99'});
+  request.headers.set('CF-Connecting-IP','198.51.100.24');
+  request.headers.set('X-Forwarded-For','203.0.113.99');
+  assert.equal((await worker.fetch(request,testEnv)).status,200);
+  const session=testEnv.ANALYTICS_DB.sessions.get(payload.session_id);
+  assert.equal(session.ip_address,'198.51.100.24');
+  assert.ok(session.ip_recorded_at>0);
+});
+
+test('IP IPv6 mais recente atualiza a sessão e ausência de IP não renova retenção',async()=>{
+  const testEnv=env();
+  const request=post('/api/analytics/event',{...payload,event_name:'page_view'});
+  request.headers.set('CF-Connecting-IP','2001:db8::42');
+  await worker.fetch(request,testEnv);
+  const timestamp=testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_recorded_at;
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_address,'2001:db8::42');
+  await worker.fetch(post('/api/analytics/heartbeat',payload),testEnv);
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_recorded_at,timestamp);
+  const updated=post('/api/analytics/heartbeat',payload);
+  updated.headers.set('CF-Connecting-IP','198.51.100.25');
+  await worker.fetch(updated,testEnv);
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_address,'198.51.100.25');
+});
+
+test('IP ausente ou inválido não é gravado e não aceita X-Forwarded-For',async()=>{
+  for(const ip of [null,'not-an-ip','999.1.2.3','127.0.0.1,203.0.113.2']){
+    const testEnv=env(),request=post('/api/analytics/heartbeat',payload);
+    request.headers.set('X-Forwarded-For','203.0.113.9');
+    if(ip)request.headers.set('CF-Connecting-IP',ip);
+    await worker.fetch(request,testEnv);
+    assert.equal(testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_address,null);
+  }
+});
+
+test('IP aparece somente no detalhe privado e não é exibido após 7 dias',async()=>{
+  const testEnv=env(),now=Math.floor(Date.now()/1000);
+  testEnv.ANALYTICS_DB.sessions.set(payload.session_id,{...payload,ip_address:'198.51.100.24',ip_recorded_at:now});
+  const url=`https://analytics.example/api/analytics/session/${payload.session_id}`;
+  assert.equal((await worker.fetch(new Request(url),testEnv)).status,401);
+  const details=()=>worker.fetch(new Request(url,{headers:{Authorization:'Bearer secret-token'}}),testEnv);
+  assert.equal((await (await details()).json()).session.ip_address,'198.51.100.24');
+  testEnv.ANALYTICS_DB.sessions.get(payload.session_id).ip_recorded_at=now-7*86400;
+  const expired=await (await details()).json();
+  assert.equal(expired.session.ip_address,null);
+  assert.equal(expired.session.ip_recorded_at,null);
+});
+
+test('limpeza automática remove só IPs vencidos e preserva métricas e eventos',async()=>{
+  const testEnv=env(),now=Math.floor(Date.now()/1000);
+  testEnv.ANALYTICS_DB.sessions.set('expired',{ip_address:'198.51.100.24',ip_recorded_at:now-7*86400,current_step:20});
+  testEnv.ANALYTICS_DB.sessions.set('current',{ip_address:'2001:db8::42',ip_recorded_at:now,current_step:5});
+  testEnv.ANALYTICS_DB.events.set('event',{id:'event',session_id:'expired',event_name:'quiz_completed'});
+  await worker.scheduled({scheduledTime:now*1000},testEnv);
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get('expired').ip_address,null);
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get('expired').current_step,20);
+  assert.equal(testEnv.ANALYTICS_DB.sessions.get('current').ip_address,'2001:db8::42');
+  assert.equal(testEnv.ANALYTICS_DB.events.size,1);
+});
 
 test('valida e limita dados de sessão',()=>{
   const parsed=validatePayload({...payload,utm_campaign:'x'.repeat(300),vsl_progress:120});
@@ -136,10 +201,14 @@ test('quiz mantém eventos de análise e demais chamadas do Meta',async()=>{
   assert.match(page,/fbq\('track', 'PageView'/);
 });
 
-test('dashboard usa login explícito por clique e submit',async()=>{
+test('dashboard mantém login privado e mostra IP com prazo de retenção',async()=>{
   const html=await readFile(new URL('../public/analytics/index.html',import.meta.url),'utf8');
   const app=await readFile(new URL('../public/analytics/app.js',import.meta.url),'utf8');
-  assert.match(html,/app\.js\?v=2/);
+  assert.match(html,/app\.js\?v=5/);
   assert.match(app,/login-form button.*addEventListener\('click'/);
   assert.match(app,/login-form.*addEventListener\('submit'/);
+  assert.match(app,/credentials:'same-origin'/);
+  assert.match(app,/field\('IP mais recente',s\.ip_address\)/);
+  assert.match(app,/7 dias/);
+  assert.doesNotMatch(app,/sessionStorage\.getItem\('analytics_admin_token'/);
 });

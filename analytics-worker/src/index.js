@@ -80,10 +80,20 @@ function validatePayload(raw) {
   return payload;
 }
 __name(validatePayload, "validatePayload");
-function sessionStatement(db, payload, now) {
-  return db.prepare(`INSERT INTO sessions (session_id,started_at,last_seen_at,current_page,current_step,quiz_total_steps,vsl_progress,page_path,referrer,utm_source,utm_medium,utm_campaign,utm_content,utm_term,fbclid,device_type,browser,created_at,updated_at)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-    ON CONFLICT(session_id) DO UPDATE SET last_seen_at=excluded.last_seen_at,current_page=excluded.current_page,current_step=COALESCE(excluded.current_step,sessions.current_step),quiz_total_steps=COALESCE(excluded.quiz_total_steps,sessions.quiz_total_steps),vsl_progress=COALESCE(excluded.vsl_progress,sessions.vsl_progress),page_path=excluded.page_path,referrer=CASE WHEN sessions.referrer='' THEN excluded.referrer ELSE sessions.referrer END,utm_source=CASE WHEN sessions.utm_source='' THEN excluded.utm_source ELSE sessions.utm_source END,utm_medium=CASE WHEN sessions.utm_medium='' THEN excluded.utm_medium ELSE sessions.utm_medium END,utm_campaign=CASE WHEN sessions.utm_campaign='' THEN excluded.utm_campaign ELSE sessions.utm_campaign END,utm_content=CASE WHEN sessions.utm_content='' THEN excluded.utm_content ELSE sessions.utm_content END,utm_term=CASE WHEN sessions.utm_term='' THEN excluded.utm_term ELSE sessions.utm_term END,fbclid=CASE WHEN sessions.fbclid='' THEN excluded.fbclid ELSE sessions.fbclid END,device_type=excluded.device_type,browser=excluded.browser,updated_at=excluded.updated_at`).bind(payload.session_id, now, now, payload.current_page, payload.current_step, payload.quiz_total_steps, payload.vsl_progress, payload.page_path, payload.referrer, payload.utm_source, payload.utm_medium, payload.utm_campaign, payload.utm_content, payload.utm_term, payload.fbclid, payload.device_type, payload.browser, now, now);
+const IP_RETENTION_SECONDS = 7 * 86400;
+function visitorIp(request) {
+  const value = (request.headers.get('CF-Connecting-IP') || '').trim();
+  if (!value || value.length > 45) return null;
+  if (value.includes(':')) {
+    try { return new URL(`http://[${value}]/`).hostname.slice(1,-1); } catch { return null; }
+  }
+  const parts = value.split('.');
+  return parts.length === 4 && parts.every(part => /^(0|[1-9]\d{0,2})$/.test(part) && Number(part) <= 255) ? value : null;
+}
+function sessionStatement(db, payload, now, ip) {
+  return db.prepare(`INSERT INTO sessions (session_id,started_at,last_seen_at,current_page,current_step,quiz_total_steps,vsl_progress,page_path,referrer,utm_source,utm_medium,utm_campaign,utm_content,utm_term,fbclid,device_type,browser,created_at,updated_at,ip_address,ip_recorded_at)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    ON CONFLICT(session_id) DO UPDATE SET last_seen_at=excluded.last_seen_at,current_page=excluded.current_page,current_step=COALESCE(excluded.current_step,sessions.current_step),quiz_total_steps=COALESCE(excluded.quiz_total_steps,sessions.quiz_total_steps),vsl_progress=COALESCE(excluded.vsl_progress,sessions.vsl_progress),page_path=excluded.page_path,referrer=CASE WHEN sessions.referrer='' THEN excluded.referrer ELSE sessions.referrer END,utm_source=CASE WHEN sessions.utm_source='' THEN excluded.utm_source ELSE sessions.utm_source END,utm_medium=CASE WHEN sessions.utm_medium='' THEN excluded.utm_medium ELSE sessions.utm_medium END,utm_campaign=CASE WHEN sessions.utm_campaign='' THEN excluded.utm_campaign ELSE sessions.utm_campaign END,utm_content=CASE WHEN sessions.utm_content='' THEN excluded.utm_content ELSE sessions.utm_content END,utm_term=CASE WHEN sessions.utm_term='' THEN excluded.utm_term ELSE sessions.utm_term END,fbclid=CASE WHEN sessions.fbclid='' THEN excluded.fbclid ELSE sessions.fbclid END,device_type=excluded.device_type,browser=excluded.browser,updated_at=excluded.updated_at,ip_address=COALESCE(excluded.ip_address,sessions.ip_address),ip_recorded_at=COALESCE(excluded.ip_recorded_at,sessions.ip_recorded_at)`).bind(payload.session_id, now, now, payload.current_page, payload.current_step, payload.quiz_total_steps, payload.vsl_progress, payload.page_path, payload.referrer, payload.utm_source, payload.utm_medium, payload.utm_campaign, payload.utm_content, payload.utm_term, payload.fbclid, payload.device_type, payload.browser, now, now, ip, ip ? now : null);
 }
 __name(sessionStatement, "sessionStatement");
 async function parseBody(request) {
@@ -107,7 +117,7 @@ async function ingest(request, env, isEvent) {
     const blockedSessions = String(env.BLOCKED_SESSION_IDS || '').split(',').map(id => id.trim().toLowerCase());
     if (blockedSessions.includes(payload.session_id.toLowerCase())) return json({error:'Sessão bloqueada',code:'session_blocked'},403,corsHeaders(origin,env));
     const now = nowSeconds();
-    const upsert = sessionStatement(env.ANALYTICS_DB, payload, now);
+    const upsert = sessionStatement(env.ANALYTICS_DB, payload, now, visitorIp(request));
     if (!isEvent) {
       await upsert.run();
       return json({ ok: true }, 200, corsHeaders(origin, env));
@@ -196,6 +206,10 @@ async function sessionDetail(id, env) {
   if (!/^[a-f0-9-]{20,64}$/i.test(id)) return json({ error: "Sess\xE3o inv\xE1lida" }, 400);
   const session = await env.ANALYTICS_DB.prepare("SELECT * FROM sessions WHERE session_id=?").bind(id).first();
   if (!session) return json({ error: "Sess\xE3o n\xE3o encontrada" }, 404);
+  if (!session.ip_recorded_at || session.ip_recorded_at <= nowSeconds() - IP_RETENTION_SECONDS) {
+    session.ip_address = null;
+    session.ip_recorded_at = null;
+  }
   const events = await env.ANALYTICS_DB.prepare("SELECT id,event_name,event_data,created_at FROM events WHERE session_id=? ORDER BY created_at ASC LIMIT 500").bind(id).all();
   return json({ session, events: (events.results || []).map((event) => ({ ...event, event_data: JSON.parse(event.event_data || "{}") })) });
 }
@@ -222,7 +236,11 @@ async function handle(request, env) {
   return env.ASSETS.fetch(request);
 }
 __name(handle, "handle");
-var index_default = { fetch: handle };
+async function cleanupIps(controller, env) {
+  const cutoff = Math.floor(controller.scheduledTime / 1000) - IP_RETENTION_SECONDS;
+  await env.ANALYTICS_DB.prepare('UPDATE sessions SET ip_address=NULL,ip_recorded_at=NULL WHERE ip_recorded_at <= ?').bind(cutoff).run();
+}
+var index_default = { fetch: handle, scheduled: cleanupIps };
 export {
   index_default as default,
   isOriginAllowed,
