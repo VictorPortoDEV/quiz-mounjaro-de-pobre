@@ -22,6 +22,7 @@
     }
   ],
   "vars": {
+    "BLOCKED_SESSION_IDS": "e3ec8887-c4a7-4642-8929-26ad7a4c1784",
     "ALLOWED_ORIGINS": "https://mounjarodpobre.com.br,https://www.mounjarodpobre.com.br,https://quiz.mounjarodpobre.com.br,https://quiz.mounjarodepobreon.com,https://aceleradormetabolico.mounjarodpobre.com.br,https://desparasitese.mounjarodpobre.com.br",
     "ALLOW_LOCAL_DEV": "false"
   }

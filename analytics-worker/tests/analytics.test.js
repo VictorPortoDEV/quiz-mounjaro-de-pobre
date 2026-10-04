@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { runInNewContext } from 'node:vm';
 import worker, { isOriginAllowed, rangeStart, validatePayload } from '../src/index.js';
 
 class Statement {
@@ -38,6 +39,63 @@ test('heartbeat faz upsert sem criar spam de eventos',async()=>{
   assert.equal(testEnv.ANALYTICS_DB.sessions.size,1);
   assert.equal(testEnv.ANALYTICS_DB.sessions.get(payload.session_id).current_step,2);
   assert.equal(testEnv.ANALYTICS_DB.events.size,0);
+});
+
+test('sessão bloqueada não grava heartbeat nem eventos e mantém CORS',async()=>{
+  const testEnv=env();
+  testEnv.BLOCKED_SESSION_IDS='e3ec8887-c4a7-4642-8929-26ad7a4c1784';
+  const blocked={...payload,session_id:testEnv.BLOCKED_SESSION_IDS.toUpperCase(),event_name:'quiz_step'};
+  for(const path of ['/api/analytics/heartbeat','/api/analytics/event']){
+    const response=await worker.fetch(post(path,blocked),testEnv);
+    assert.equal(response.status,403);
+    assert.equal((await response.json()).code,'session_blocked');
+    assert.equal(response.headers.get('Access-Control-Allow-Origin'),'https://quiz.example');
+  }
+  assert.equal(testEnv.ANALYTICS_DB.sessions.size,0);
+  assert.equal(testEnv.ANALYTICS_DB.events.size,0);
+  assert.equal((await worker.fetch(post('/api/analytics/heartbeat',payload),testEnv)).status,200);
+});
+
+async function analyticsClient(sessionId,response=new Response('{}'),search=''){
+  const sent=[],listeners={},intervals=[],storageWrites=[];
+  const app={innerHTML:''};
+  const blockedId='e3ec8887-c4a7-4642-8929-26ad7a4c1784';
+  const window={FUNNEL_DATA:{steps:[{}]},QuizUI:{dispose(){}},addEventListener(name,fn){listeners[name]=fn},dispatchEvent(event){listeners[event.type]?.()}};
+  const context={window,URL,URLSearchParams,Event,crypto,Promise,location:{search,protocol:'https:',pathname:'/'},navigator:{userAgent:'Chrome/'},matchMedia:()=>({matches:false}),localStorage:{getItem:()=>sessionId,setItem:(key,value)=>storageWrites.push(value)},sessionStorage:{getItem:()=>null,setItem(){}},document:{currentScript:{dataset:{page:'quiz',blockedSessions:blockedId}},referrer:'',visibilityState:'visible',addEventListener(){},querySelector:()=>app},fetch:async(url,options)=>{sent.push({url,body:JSON.parse(options.body)});return response.clone()},setInterval:fn=>{intervals.push(fn);return intervals.length},clearInterval(){}};
+  runInNewContext(await readFile(new URL('../../analytics.js',import.meta.url),'utf8'),context);
+  return {context,app,sent,intervals,storageWrites};
+}
+
+test('sid na URL não substitui o identificador já bloqueado no navegador',async()=>{
+  const client=await analyticsClient('e3ec8887-c4a7-4642-8929-26ad7a4c1784',new Response('{}'),`?sid=${payload.session_id}`);
+  assert.equal(client.context.window.FunnelAnalytics.blocked,true);
+  assert.equal(client.storageWrites.length,0);
+  assert.equal(client.sent.length,0);
+});
+
+test('quiz bloqueado mostra aviso sem enviar métricas nem iniciar timers',async()=>{
+  const client=await analyticsClient('e3ec8887-c4a7-4642-8929-26ad7a4c1784');
+  assert.equal(client.context.window.FunnelAnalytics.blocked,true);
+  runInNewContext(await readFile(new URL('../../app.js',import.meta.url),'utf8'),client.context);
+  assert.match(client.app.innerHTML,/Esta sessão foi bloqueada/);
+  assert.equal(client.sent.length,0);
+  assert.equal(client.intervals.length,0);
+});
+
+test('outras sessões continuam enviando métricas normalmente',async()=>{
+  const client=await analyticsClient(payload.session_id);
+  assert.equal(client.context.window.FunnelAnalytics.blocked,false);
+  assert.equal(client.sent.length,2);
+  assert.equal(client.intervals.length,1);
+});
+
+test('bloqueio confirmado pelo servidor interrompe novos eventos no cliente',async()=>{
+  const client=await analyticsClient(payload.session_id,new Response(JSON.stringify({code:'session_blocked'}),{status:403}));
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(client.context.window.FunnelAnalytics.blocked,true);
+  const count=client.sent.length;
+  await client.context.window.FunnelAnalytics.event('cta_clicked');
+  assert.equal(client.sent.length,count);
 });
 
 test('evento permitido é deduplicado por event_id',async()=>{
