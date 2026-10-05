@@ -6,11 +6,21 @@
   const params = new URLSearchParams(location.search);
   const incomingId = params.get('sid');
   const storageKey = 'mdp_analytics_session';
+  const createId = () => {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    const bytes = new Uint8Array(16);
+    if (window.crypto && typeof window.crypto.getRandomValues === 'function') window.crypto.getRandomValues(bytes);
+    else for (let index = 0; index < bytes.length; index++) bytes[index] = Math.floor(Math.random() * 256);
+    bytes[6] = (bytes[6] & 15) | 64;
+    bytes[8] = (bytes[8] & 63) | 128;
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+  };
   const readStored = () => {
     try { return localStorage.getItem(storageKey) || sessionStorage.getItem(storageKey); } catch { return null; }
   };
   const storedId = readStored();
-  const sessionId = (/^[a-f0-9-]{20,64}$/i.test(incomingId || '') && incomingId) || storedId || crypto.randomUUID();
+  const sessionId = (/^[a-f0-9-]{20,64}$/i.test(incomingId || '') && incomingId) || storedId || createId();
   const blockedSessions = (script?.dataset.blockedSessions || '').split(',').map(id => id.trim().toLowerCase()).filter(Boolean);
   let blocked = [sessionId, storedId].some(id => id && blockedSessions.includes(id.toLowerCase()));
   let heartbeatTimer;
@@ -68,7 +78,7 @@
     setState(next) { Object.assign(state, next); },
     heartbeat,
     event(eventName, eventData = {}) {
-      return send('/api/analytics/event', { event_id: crypto.randomUUID(), event_name: eventName, event_data: eventData });
+      return send('/api/analytics/event', { event_id: createId(), event_name: eventName, event_data: eventData });
     }
   };
   window.FunnelAnalytics = api;
